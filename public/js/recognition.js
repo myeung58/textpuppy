@@ -28,6 +28,7 @@ function recognize() {
       //event.result[count][number].transscript returns word string of the most probable word of the select word index.  
         console.log(event.results[count][0].transcript);
         analyze(event.results[count][0].transcript);
+        // restart();
       }
     }
 
@@ -46,6 +47,13 @@ function stop() {
   }
 }
 
+function restart() {
+  if (recognizer != null) {
+    stop();
+    recognize();
+
+  }
+}
 
 
 
