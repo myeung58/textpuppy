@@ -1,5 +1,12 @@
 <p>welcome back, <%= @user.username %>!</p>
-<button onclick="recognize()">Start Recognization</button>
-<button onclick="stop()">Stop Recognization</button>
+<button onclick="recognize()">Start Voice Commands</button>
+<button onclick="stop()">Stop Voice Commands</button>
 
+<div class="contacts">
+  <a class="create-contact" href="/users/<%= @user.id %>/contacts/new">New Contact</a> 
+  <% @user.contacts.each do |contact| %>
+    <p><%= contact.contact_name %></p>
+    <p><%= format_phone_num(contact.phone) %></p>
+  <% end %>
+</div>
 <a href="/signout">Log out</a>

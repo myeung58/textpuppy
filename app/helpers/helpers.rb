@@ -6,4 +6,5 @@ helpers do
   def signed_in?
   	!current_user.signed_in?
   end
+
 end
