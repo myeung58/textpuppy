@@ -17,6 +17,9 @@ gem 'activerecord', '~>4.1'
 gem 'rake'
 
 gem 'shotgun'
+gem 'twilio-ruby'
+
+gem 'dotenv'
 
 group :test do
   gem 'faker'

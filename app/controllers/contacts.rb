@@ -8,3 +8,4 @@ post '/users/:id/contacts/new' do
   @user.contacts << Contact.create(contact_name: params[:contact_name], phone: params[:phone])
   redirect "/users/#{current_user.id}"
 end
+

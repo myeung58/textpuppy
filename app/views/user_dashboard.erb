@@ -9,4 +9,9 @@
     <p><%= format_phone_num(contact.phone) %></p>
   <% end %>
 </div>
+
+<div class="texting">
+  <a class="text-contact" href="/users/<%=@user.id%>/contacts/text">Text my contact(s)</a>
+</div>
+
 <a href="/signout">Log out</a>
