@@ -15,11 +15,10 @@ $(document).ready(function() {
   })
 
   $(".text-contact-field").on("click", ".send-texts", function(event) {
-  	event.preventDefault();
   	var formData = $(".text-contact-field").serialize();
   	var request = $.ajax({url: $(".text-contact-field").attr("action"), 
   						  type: "POST",
-  						  data: {values: formData}})
+  						  data: formData})
   	request.done(function(serverData) {
   	  console.log("success");
       // console.log(serverData)

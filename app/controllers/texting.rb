@@ -18,13 +18,13 @@ post '/users/:id/contacts/text' do
   @contacts.each do |contact|
     # take the checked contact(s) and send a text
 
-    p ENV['account_sid']
+    p params[:content]
     @client = Twilio::REST::Client.new(ENV['account_sid'], ENV['auth_token'])
    
     @client.account.messages.create({
     :from => '+12262420765', 
     :to => contact.phone, 
-    :body => "hey what's up",  
+    :body => params[:content],  
     })
   end
   
@@ -33,5 +33,5 @@ end
 
 
 
-# use set timeout to append and remove notifications
+
 

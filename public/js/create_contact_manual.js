@@ -14,13 +14,14 @@ $(document).ready(function() {
   })
 
   $(".contact-field").on("click", ".submit-contact", function(event) {
-  	event.preventDefault();
+  	// event.preventDefault();
   	var formData = $(".contact-field").serialize();
   	var request = $.ajax({url: $(".contact-field").attr("action"), 
   						  type: "POST",
-  						  data: {values: formData}})
+  						  data: formData})
   	request.done(function(serverData) {
   	  console.log("success");
+      // cleanup();
   	})
   	request.fail(function() {
   	  console.log("fail");

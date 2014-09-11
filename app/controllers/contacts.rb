@@ -4,6 +4,7 @@ get '/users/:id/contacts/new' do
 end
 
 post '/users/:id/contacts/new' do
+  p params
   @user = User.find(params[:id])
   @user.contacts << Contact.create(contact_name: params[:contact_name], phone: params[:phone])
   redirect "/users/#{current_user.id}"

@@ -16,7 +16,7 @@ function recognize() {
     recognizer.interimResults = false;
 
     recognizer.onstart = function() {
-      console.log("Recogniztion API started");
+      console.log("Recogniztion started");
     }
 
     recognizer.onresult = function(event) {  
@@ -27,12 +27,13 @@ function recognize() {
       //event.results[count][number], here 2D represents the most probable work for the spoken word.
       //event.result[count][number].transscript returns word string of the most probable word of the select word index.  
         console.log(event.results[count][0].transcript);
+        analyze(event.results[count][0].transcript);
       }
     }
 
     recognizer.onend = function() {
       recognizer = null;
-      console.log("Recogniztion API stopped");
+      console.log("Recogniztion stopped");
     }
 
     recognizer.start();

@@ -3,7 +3,7 @@
 <button onclick="stop()">Stop Voice Commands</button>
 
 <div class="contacts">
-  <a class="create-contact" href="/users/<%= @user.id %>/contacts/new">New Contact</a> 
+  <a class="create-contact" href="/users/<%= @user.id %>/contacts/new">Create New Contact</a> 
   <% @user.contacts.each do |contact| %>
     <p><%= contact.contact_name %></p>
     <p><%= format_phone_num(contact.phone) %></p>
@@ -11,7 +11,7 @@
 </div>
 
 <div class="texting">
-  <a class="text-contact" href="/users/<%=@user.id%>/contacts/text">Text my contact(s)</a>
+  <a class="text-contact" href="/users/<%=@user.id%>/contacts/text">Create New Text</a>
 </div>
 
 <a href="/signout">Log out</a>
