@@ -21,6 +21,5 @@ gem 'twilio-ruby'
 
 gem 'dotenv'
 
-
-  gem 'faker'
-  gem 'rspec'
+gem 'faker'
+gem 'rspec'
