@@ -15,7 +15,6 @@ body {
   margin: 100px 20px 20px 50px;
   width: 300px;
   padding: 1px 20px 20px 20px;
-  color: white;
   float: left;
   /*background-color: #E6E600;*/
 }
@@ -27,6 +26,7 @@ th {
 input {
   width: 250px;
   border-radius: 10px;
+  color: black;
 }
 
 .submit-button {
@@ -56,9 +56,45 @@ input {
   color: white;
 }
 
+.auth-header {
+  color: white;
+}
 
+button {
+  font-weight: 2px;
+  border-radius: 10px;
+  background-color: white;
+}
+button:hover {
+  background-color: orange;
+  transition: background-color, 0.5s;
+}
 
+.dashboard-background {
+  margin: 10px 0px 0px 100px;
+  padding: 20px;
+}
 
+#dashboard-buttons:hover {
+  text-decoration: none;
+}
 
+.contact-info-container {
+  border: solid;
+  border-color: white;
+  border-width: 1px;
+  border-radius: 15px;
+  width: 200px;
+  padding: 10px;
+  text-align: center;
+}
 
+.contact-info-container:hover {
+  background-color: orange;
+  transition: background-color, 0.5s;
+}
+
+.contact-info {
+  color: white;
+}
 
