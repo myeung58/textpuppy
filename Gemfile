@@ -21,7 +21,6 @@ gem 'twilio-ruby'
 
 gem 'dotenv'
 
-group :test do
+
   gem 'faker'
   gem 'rspec'
-end
