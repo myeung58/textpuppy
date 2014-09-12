@@ -1,6 +1,7 @@
 $(document).ready(function() {
   var recognizer = null;
   // recognize();
+  document.addEventListener("keyup", listener, false);
 });
 
 function recognize() {
@@ -55,6 +56,14 @@ function restart() {
   }
 }
 
+function listener(key) {
+  // F1 and F2
+  if (key.keyCode === 112) {
+    recognize();
+  } else if (key.keyCode === 113) {
+    stop();
+  }
+}
 
 
 
