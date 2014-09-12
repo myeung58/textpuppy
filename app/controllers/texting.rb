@@ -17,7 +17,8 @@ post '/users/:id/contacts/text' do
   end
   @contacts.each do |contact|
     # take the checked contact(s) and send a text
-    @client = Twilio::REST::Client.new(ENV['account_sid'], ENV['auth_token'])
+    # @client = Twilio::REST::Client.new(ENV['account_sid'], ENV['auth_token'])
+    @client = Twilio::REST::Client.new('AC90434a67ef1e41b8c69308b4d0ae7098', '1242572856dbaca3a0faf7418f8cd902')
     
     @client.account.messages.create({
     :from => '+14154668666', 
