@@ -1,9 +1,53 @@
-.auth-container {
-  margin: 20px auto;
-  width: 600px;
-  padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
+html {
+  background-color: black;
 }
+
+body {
+  background-color: #F7DA64;
+}
+
+.auth-container {
+  margin: 80px 180px 0px auto;
+  width: 300px;
+  padding: 1px 20px 20px 20px;
+  color: white;
+  /*background-color: #E6E600;*/
+}
+
 th {
   text-align: left;
 }
+
+input {
+  width: 250px;
+  border-radius: 10px;
+}
+
+.submit-button {
+  border-radius: 5px;
+  color: black;
+  background-color: white;
+  width: 100px;
+  float: right;
+}
+
+.submit-button:hover {
+  background-color: black;
+  color: white;
+}
+.background {
+  background-color: black;
+  height: 1000px;
+}
+.background-div {
+  margin-left: 100px;
+  background-color: black;
+  background: url("http://i.imgur.com/loHTFtG.gif");
+  background-repeat: no-repeat;
+  background-size: 500px 100%;
+}
+/*.front-header {
+  margin-right: 0px 100px 0px auto;
+  background-color: black;
+  color: white;
+}*/

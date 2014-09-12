@@ -17,19 +17,19 @@ post '/users/:id/contacts/text' do
   end
   @contacts.each do |contact|
     # take the checked contact(s) and send a text
-
-    p params[:content]
     @client = Twilio::REST::Client.new(ENV['account_sid'], ENV['auth_token'])
-   
+    
     @client.account.messages.create({
-    :from => '+12262420765', 
+    :from => '+14154668666', 
     :to => contact.phone, 
-    :body => params[:content],  
+    :body => params[:content]  
     })
   end
   
   redirect "/users/#{current_user.id}"
 end
+
+
 
 
 

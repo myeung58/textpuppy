@@ -23,7 +23,7 @@ function analyze(sentence) {
     strings.shift(); strings.shift();
     voiceInsertTextContent(strings);
   } else {
-  	console.log("voice command not recognized")
+  	alert("I don't know what you are talking about. Try again.")
   }
 
 }
@@ -117,9 +117,9 @@ function voiceInsertTextContact(strings) {
 function voiceInsertTextContent(strings) {
   var textContent = "";
   for (var i = 0; i < strings.length; i++) {
-    textContent += strings[i];
+    textContent += (strings[i] + " ");
   }
-  $(".input-field4").val(textContent);
+  $(".input-field4").val(textContent.substring(0, textContent.length - 1));
 }
 
 
