@@ -1,16 +1,22 @@
-html {
+/*html {
   background-color: black;
-}
+  background: url("http://4hotos.com/wp-content/uploads/2014/04/white-sweet-puppy-hd-wallpaper-123123.jpg");
+}*/
 
 body {
   background-color: #F7DA64;
+  background: url("http://4hotos.com/wp-content/uploads/2014/04/white-sweet-puppy-hd-wallpaper-123123.jpg");
+  background-size: 1280px 750px;
+  background-repeat: no-repeat;
+  height: 659px;
 }
 
 .auth-container {
-  margin: 80px 180px 0px auto;
+  margin: 100px 20px 20px 50px;
   width: 300px;
   padding: 1px 20px 20px 20px;
   color: white;
+  float: left;
   /*background-color: #E6E600;*/
 }
 
@@ -35,19 +41,24 @@ input {
   background-color: black;
   color: white;
 }
-.background {
+/*.background {
   background-color: black;
   height: 1000px;
-}
-.background-div {
-  margin-left: 100px;
-  background-color: black;
-  background: url("http://i.imgur.com/loHTFtG.gif");
-  background-repeat: no-repeat;
-  background-size: 500px 100%;
-}
-/*.front-header {
-  margin-right: 0px 100px 0px auto;
-  background-color: black;
-  color: white;
 }*/
+/*.background-div {
+  opacity: 1;
+}*/
+.front-header {
+  margin: 60px 100px 0px 280px;
+  background-color: black;
+  font-size: 50px;
+  font-family: 'Lobster', cursive;
+  color: white;
+}
+
+
+
+
+
+
+

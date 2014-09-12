@@ -1,93 +1,111 @@
-
 function analyze(sentence) {
   var strings = sentence.split(" ");
   if (sentenceHas(strings, "create") && sentenceHas(strings, "new") && sentenceHas(strings, "contact")) {
-  	// if field does not exist, open field; if it does, use jquery focus
+    // if field does not exist, open field; if it does, use jquery focus
     voiceOpenCreateContact();
   } else if (sentenceHas(strings, "submit") && sentenceHas(strings, "contact")) {
-  	voiceSubmitCreateContact();
+    voiceSubmitCreateContact();
   } else if (sentenceHas(strings, "create") && sentenceHas(strings, "new") && sentenceHas(strings, "text")) {
-  	voiceOpenCreateText();
+    voiceOpenCreateText();
   } else if (sentenceHas(strings, "submit") && sentenceHas(strings, "text")) {
-  	voiceSubmitCreateText();
+    voiceSubmitCreateText();
   } else if (sentenceHas(strings, "contact") && sentenceHas(strings, "name")) {
-    strings.shift(); strings.shift();
+    strings.shift();
+    strings.shift();
     voiceInsertContactName(strings);
   } else if (sentenceHas(strings, "contact") && sentenceHas(strings, "number")) {
-    strings.shift(); strings.shift();
+    strings.shift();
+    strings.shift();
     voiceInsertContactNumber(strings);
   } else if (sentenceHas(strings, "text") && sentenceHas(strings, "people")) {
-    strings.shift(); strings.shift();
+    strings.shift();
+    strings.shift();
     voiceInsertTextContact(strings);
   } else if (sentenceHas(strings, "text") && sentenceHas(strings, "content")) {
-    strings.shift(); strings.shift();
+    strings.shift();
+    strings.shift();
     voiceInsertTextContent(strings);
   } else {
-  	alert("I don't know what you are talking about. Try again.")
+    alert("I don't know what you are talking about. Try again.")
   }
 
 }
 
+/**
+ * ##sentenceHas
+ * `func` bla bla bla
+ * @param  {[type]} array  [description]
+ * @param  {[type]} string [description]
+ * @return {[type]}        [description]
+ */
 function sentenceHas(array, string) {
+  // sdfjsdjf
   return (array.indexOf(string) > -1);
 }
 
 function voiceOpenCreateContact() {
-  var request = $.ajax({url: $(".create-contact").attr("href"), 
-  						  type: "GET"})
-  	request.done(function(serverData) {
-  	  console.log("success");
-  	  cleanup();
-  	  $(".contacts").append(serverData);
-  	})
-  	request.fail(function() {
-  	  console.log("fail");
-  	})
+  var request = $.ajax({
+    url: $(".create-contact").attr("href"),
+    type: "GET"
+  })
+  request.done(function(serverData) {
+    console.log("success");
+    cleanup();
+    $(".contacts").append(serverData);
+  })
+  request.fail(function() {
+    console.log("fail");
+  })
 }
 
 function voiceSubmitCreateContact() {
   var formData = $(".contact-field").serialize();
   console.log(formData);
-  var request = $.ajax({url: $(".contact-field").attr("action"), 
-  						  type: "POST",
-  						  data: formData})
-  	request.done(function(serverData) {
-  	  console.log("success");
-  	  cleanup(); 
-      location.reload();
-  	})
-  	request.fail(function() {
-  	  console.log("fail");
-  	})
+  var request = $.ajax({
+    url: $(".contact-field").attr("action"),
+    type: "POST",
+    data: formData
+  })
+  request.done(function(serverData) {
+    console.log("success");
+    cleanup();
+    location.reload();
+  })
+  request.fail(function() {
+    console.log("fail");
+  })
 }
 
 function voiceOpenCreateText() {
-  var request = $.ajax({url: $(".text-contact").attr("href"), 
-                type: "GET"})
-    request.done(function(serverData) {
-      console.log("success");
-      console.log(serverData)
-      cleanup();
-      $(".texting").append(serverData);
-    })
-    request.fail(function() {
-      console.log("fail");
-    })
+  var request = $.ajax({
+    url: $(".text-contact").attr("href"),
+    type: "GET"
+  })
+  request.done(function(serverData) {
+    console.log("success");
+    cleanup();
+    $(".texting").append(serverData);
+  })
+  request.fail(function() {
+    console.log("fail");
+  })
 }
 
 function voiceSubmitCreateText() {
   var formData = $(".text-contact-field").serialize();
-    var request = $.ajax({url: $(".text-contact-field").attr("action"), 
-                type: "POST",
-                data: formData})
-    request.done(function(serverData) {
-      console.log("success");
-      // console.log(serverData)
-      location.reload();
-    })
-    request.fail(function() {
-      console.log("fail");
-    })
+  var request = $.ajax({
+    url: $(".text-contact-field").attr("action"),
+    type: "POST",
+    data: formData
+  })
+  request.done(function(serverData) {
+    console.log("success");
+    // console.log(serverData)
+    location.reload();
+  })
+  request.fail(function() {
+    console.log("fail");
+  })
 }
 
 function voiceInsertContactName(strings) {
@@ -120,9 +138,9 @@ function voiceInsertTextContent(strings) {
     textContent += (strings[i] + " ");
   }
   $(".input-field4").val(textContent.substring(0, textContent.length - 1));
+
+
+
+
+  
 }
-
-
-
-
-

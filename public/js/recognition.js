@@ -20,13 +20,13 @@ function recognize() {
       console.log("Recogniztion started");
     }
 
-    recognizer.onresult = function(event) {  
+    recognizer.onresult = function(event) {
       //event.resultIndex returns the index of first word spoken in the currently stoped sentence.
       //event.results.length is the total number of words spoken in this session.
       console.log(event.results.length)
-      for(var count = event.resultIndex; count < event.results.length; count++) {
-      //event.results[count][number], here 2D represents the most probable work for the spoken word.
-      //event.result[count][number].transscript returns word string of the most probable word of the select word index.  
+      for (var count = event.resultIndex; count < event.results.length; count++) {
+        //event.results[count][number], here 2D represents the most probable work for the spoken word.
+        //event.result[count][number].transscript returns word string of the most probable word of the select word index.  
         console.log(event.results[count][0].transcript);
         analyze(event.results[count][0].transcript);
         // restart();
@@ -64,9 +64,3 @@ function listener(key) {
     stop();
   }
 }
-
-
-
-
-
-
